@@ -59,3 +59,11 @@ public extension UIColor {
 	}
 	
 }
+
+extension Color {
+	
+	static var primaryColor: Self {
+		return .init(hex: "0E1F4E")
+	}
+	
+}
