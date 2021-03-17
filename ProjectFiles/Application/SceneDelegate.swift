@@ -8,6 +8,10 @@
 import UIKit
 import SwiftUI
 
+var sceneDelegate: SceneDelegate {
+	return UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
@@ -19,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
 		// Create the SwiftUI view that provides the window contents.
-		let contentView = LoginView()
+		let contentView = TutorialView()
 
 		// Use a UIHostingController as window root view controller.
 		if let windowScene = scene as? UIWindowScene {
@@ -61,3 +65,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+	
+	func showOnboarding() {
+		guard let window = self.window else { return }
+		window.rootViewController = UIHostingController(rootView: OnboardingView())
+		window.makeKeyAndVisible()
+	}
+	
+}

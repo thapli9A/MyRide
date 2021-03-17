@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F8AE017260074D7008E79A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AE016260074D7008E79A1 /* LoginView.swift */; };
+		9F8AE017260074D7008E79A1 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AE016260074D7008E79A1 /* TutorialView.swift */; };
 		9F8AE01C260088C1008E79A1 /* UIScreen+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AE01B260088C1008E79A1 /* UIScreen+Helper.swift */; };
 		9F8AE02026009389008E79A1 /* Color+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AE01F26009389008E79A1 /* Color+Helper.swift */; };
 		9F8AE02D26009F96008E79A1 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F8AE02426009F96008E79A1 /* Montserrat-Light.otf */; };
@@ -16,6 +16,7 @@
 		9F8AE03326009F96008E79A1 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9F8AE02A26009F96008E79A1 /* Montserrat-SemiBold.otf */; };
 		9F8AE0392600A12C008E79A1 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AE0382600A12C008E79A1 /* PageControl.swift */; };
 		9F8AE03E2600A6C3008E79A1 /* Font+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AE03D2600A6C3008E79A1 /* Font+Helper.swift */; };
+		9F8AE07E2600F344008E79A1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AE07D2600F344008E79A1 /* OnboardingView.swift */; };
 		9FA133D226006ED5005126D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA133D126006ED5005126D6 /* AppDelegate.swift */; };
 		9FA133D426006ED5005126D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA133D326006ED5005126D6 /* SceneDelegate.swift */; };
 		9FA133D826006ED6005126D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA133D726006ED6005126D6 /* Assets.xcassets */; };
@@ -57,7 +58,7 @@
 		51C01BAE845616D22A6FF5E5 /* Pods_Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		944C8D8415B77CA9D9F579F7 /* Pods_MyRide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991A02B9ECA2A8E7F0347BA7 /* Pods-MyRide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRide.release.xcconfig"; path = "Target Support Files/Pods-MyRide/Pods-MyRide.release.xcconfig"; sourceTree = "<group>"; };
-		9F8AE016260074D7008E79A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9F8AE016260074D7008E79A1 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		9F8AE01B260088C1008E79A1 /* UIScreen+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Helper.swift"; sourceTree = "<group>"; };
 		9F8AE01F26009389008E79A1 /* Color+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Helper.swift"; sourceTree = "<group>"; };
 		9F8AE02426009F96008E79A1 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		9F8AE02A26009F96008E79A1 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		9F8AE0382600A12C008E79A1 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		9F8AE03D2600A6C3008E79A1 /* Font+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Helper.swift"; sourceTree = "<group>"; };
+		9F8AE07D2600F344008E79A1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		9FA133CE26006ED5005126D6 /* MyRide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA133D126006ED5005126D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FA133D326006ED5005126D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,15 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		9F8AE07B2600EEC0008E79A1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9F8AE016260074D7008E79A1 /* TutorialView.swift */,
+				9F8AE07D2600F344008E79A1 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		9FA133C526006ED5005126D6 = {
 			isa = PBXGroup;
 			children = (
@@ -183,10 +194,10 @@
 		9FA133FF260070C7005126D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F8AE023260093E8008E79A1 /* Fonts */,
 				9FA133D726006ED6005126D6 /* Assets.xcassets */,
 				9FA133DC26006ED6005126D6 /* LaunchScreen.storyboard */,
 				9FA133DF26006ED6005126D6 /* Info.plist */,
+				9F8AE023260093E8008E79A1 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -203,7 +214,7 @@
 		9FA13401260070E6005126D6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				9F8AE016260074D7008E79A1 /* LoginView.swift */,
+				9F8AE07B2600EEC0008E79A1 /* Onboarding */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -398,7 +409,8 @@
 				9F8AE0392600A12C008E79A1 /* PageControl.swift in Sources */,
 				9FA133D426006ED5005126D6 /* SceneDelegate.swift in Sources */,
 				9F8AE02026009389008E79A1 /* Color+Helper.swift in Sources */,
-				9F8AE017260074D7008E79A1 /* LoginView.swift in Sources */,
+				9F8AE07E2600F344008E79A1 /* OnboardingView.swift in Sources */,
+				9F8AE017260074D7008E79A1 /* TutorialView.swift in Sources */,
 				9F8AE03E2600A6C3008E79A1 /* Font+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

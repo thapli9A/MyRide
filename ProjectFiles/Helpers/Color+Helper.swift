@@ -51,10 +51,8 @@ public extension UIColor {
 	}
 	
 	convenience init(hexString: String) {
-//		var hexValue: CUnsignedInt = 0
 		var hexValue: CUnsignedLongLong = 0
 		let scanner = Scanner(string: hexString)
-//		scanner.scanHexInt32(&hexValue)
 		scanner.scanHexInt64(&hexValue)
 		let value = Int(hexValue)
 		self.init(red:(value >> 16) & 0xff, green:(value >> 8) & 0xff, blue:value & 0xff)

@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  TutorialView.swift
 //  MyRide
 //
 //  Created by Abhishek Thapliyal on 16/03/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct TutorialView: View {
 	
 	@State var currentPage: Int = 0
 	private var images: [String] = [
@@ -45,7 +45,7 @@ struct LoginView: View {
 }
 
 // MARK: Top View
-extension LoginView {
+extension TutorialView {
 	
 	private var skipView: some View {
 		HStack {
@@ -71,7 +71,7 @@ extension LoginView {
 }
 
 // MARK: Bottom View
-extension LoginView {
+extension TutorialView {
 	
 	private func bottomView(proxy: GeometryProxy) -> some View {
 		VStack {
@@ -114,8 +114,10 @@ extension LoginView {
 	
 	private func button(proxy: GeometryProxy) -> some View {
 		Button(action: {
-			if self.currentPage < 4 {
+			if self.currentPage < 3 {
 				self.currentPage += 1
+			} else {
+				sceneDelegate.showOnboarding()
 			}
 		}, label: {
 			Text("Get Started")
@@ -134,8 +136,8 @@ extension LoginView {
 	
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct TutorialView_Previews: PreviewProvider {
 	static var previews: some View {
-		LoginView()
+		TutorialView()
 	}
 }
