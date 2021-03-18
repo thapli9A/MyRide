@@ -159,7 +159,7 @@ extension OnboardingView {
 	}
 	
 	private func listIem(item: String) -> some View {
-		HStack {
+		VStack(spacing: 0) {
 			Button(action: {
 				self.isdCode = item
 				self.showList.toggle()
@@ -170,10 +170,8 @@ extension OnboardingView {
 					.frame(maxWidth: .infinity, maxHeight: .infinity)
 			})
 			.buttonStyle(PlainButtonStyle())
-			.overlay(
-				Rectangle()
-					.stroke(Color.black.opacity(0.2), lineWidth: 1)
-			)
+			Color.black.opacity(0.2)
+				.frame(maxWidth: .infinity, maxHeight: 1)
 		}
 		.listRowInsets(EdgeInsets())
 	}
