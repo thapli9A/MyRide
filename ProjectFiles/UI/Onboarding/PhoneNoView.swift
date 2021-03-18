@@ -1,5 +1,5 @@
 //
-//  OnboardingView.swift
+//  PhoneNoView.swift
 //  MyRide
 //
 //  Created by Abhishek Thapliyal on 16/03/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnboardingView: View {
+struct PhoneNoView: View {
 	
 	@State var isdCode: String = "XX"
 	@State var phoneNo: String = ""
@@ -22,7 +22,7 @@ struct OnboardingView: View {
 	
 }
 
-extension OnboardingView {
+extension PhoneNoView {
 	
 	private var parentView: some View {
 		VStack(spacing: 0) {
@@ -40,7 +40,7 @@ extension OnboardingView {
 	
 }
 
-extension OnboardingView {
+extension PhoneNoView {
 	
 	private var bottomView: some View {
 		VStack(spacing: 0) {
@@ -94,7 +94,7 @@ extension OnboardingView {
 	
 }
 
-extension OnboardingView {
+extension PhoneNoView {
 	
 	private var inputView: some View {
 		ZStack {
@@ -204,8 +204,8 @@ extension OnboardingView {
 	
 }
 
-struct OnboardingView_Previews: PreviewProvider {
+struct PhoneNoView_Previews: PreviewProvider {
 	static var previews: some View {
-		OnboardingView()
+		PhoneNoView()
 	}
 }

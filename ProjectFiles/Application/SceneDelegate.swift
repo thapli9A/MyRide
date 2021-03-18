@@ -69,7 +69,7 @@ extension SceneDelegate {
 	
 	func showOnboarding() {
 		guard let window = self.window else { return }
-		window.rootViewController = UIHostingController(rootView: OnboardingView())
+		window.rootViewController = UIHostingController(rootView: PhoneNoView())
 		window.makeKeyAndVisible()
 	}
 	
