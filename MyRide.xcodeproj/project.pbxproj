@@ -26,6 +26,7 @@
 		9FA133F026006F6C005126D6 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FA133EE26006F6C005126D6 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FA133F326006F6C005126D6 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA133EC26006F6C005126D6 /* Model.framework */; };
 		9FA133F426006F6C005126D6 /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA133EC26006F6C005126D6 /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FCEE43826022893001AC2B5 /* String+ISDCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEE43726022893001AC2B5 /* String+ISDCodes.swift */; };
 		C10346ED33F8625D5C54816C /* Pods_Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C01BAE845616D22A6FF5E5 /* Pods_Model.framework */; };
 		D97A64733BF1A59571F00B4E /* Pods_MyRide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944C8D8415B77CA9D9F579F7 /* Pods_MyRide.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		9FA133EC26006F6C005126D6 /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA133EE26006F6C005126D6 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		9FA133EF26006F6C005126D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FCEE43726022893001AC2B5 /* String+ISDCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ISDCodes.swift"; sourceTree = "<group>"; };
 		CEB8140C965D0E715F7FEA60 /* Pods-Model.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.debug.xcconfig"; path = "Target Support Files/Pods-Model/Pods-Model.debug.xcconfig"; sourceTree = "<group>"; };
 		E8846F52AD17EAC25504A6D4 /* Pods-Model.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.release.xcconfig"; path = "Target Support Files/Pods-Model/Pods-Model.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				9F8AE01F26009389008E79A1 /* Color+Helper.swift */,
 				9F8AE03D2600A6C3008E79A1 /* Font+Helper.swift */,
 				9F9DF40B2601E19700240756 /* View+CornerRadius.swift */,
+				9FCEE43726022893001AC2B5 /* String+ISDCodes.swift */,
 				9F8AE0372600A102008E79A1 /* Class */,
 			);
 			path = Helpers;
@@ -413,6 +416,7 @@
 				9FA133D426006ED5005126D6 /* SceneDelegate.swift in Sources */,
 				9F8AE02026009389008E79A1 /* Color+Helper.swift in Sources */,
 				9F8AE07E2600F344008E79A1 /* OnboardingView.swift in Sources */,
+				9FCEE43826022893001AC2B5 /* String+ISDCodes.swift in Sources */,
 				9F9DF40C2601E19700240756 /* View+CornerRadius.swift in Sources */,
 				9F8AE017260074D7008E79A1 /* TutorialView.swift in Sources */,
 				9F8AE03E2600A6C3008E79A1 /* Font+Helper.swift in Sources */,

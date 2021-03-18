@@ -9,10 +9,18 @@ import SwiftUI
 
 struct OnboardingView: View {
 	
+	@State var isdCode: String = "XX"
 	@State var phoneNo: String = ""
+	@State var showList: Bool = false
+	private var isdCodes: [String] = String.codeList
 	
 	var body: some View {
 		parentView
+		//			.onAppear {
+		//				UITableView.appearance().separatorInset = UIEdgeInsets(
+		//					top: 0, left: 0, bottom: 0, right: 0
+		//				)
+		//			}
 	}
 	
 }
@@ -41,7 +49,7 @@ extension OnboardingView {
 			headingView
 			inputView
 			Spacer()
-			button
+			otpButton
 		}
 		.background(
 			Color.white
@@ -70,7 +78,7 @@ extension OnboardingView {
 		.padding(.horizontal, 20)
 	}
 	
-	private var button: some View {
+	private var otpButton: some View {
 		Button(action: {
 			
 		}, label: {
@@ -91,19 +99,44 @@ extension OnboardingView {
 extension OnboardingView {
 	
 	private var inputView: some View {
-		HStack(spacing: 5) {
-			isdCodebutton
+		HStack(alignment: .top, spacing: 10) {
+			isdCodeView
 			phoneNoField
 		}
 		.padding(.horizontal, 20)
 	}
 	
+	private var phoneNoField: some View {
+		TextField("Phone", text: self.$phoneNo)
+			.font(Font.montserratMedium(14))
+			.keyboardType(.numberPad)
+			.autocapitalization(.none)
+			.disableAutocorrection(true)
+			.padding(.vertical, 12)
+			.padding(.horizontal, 10)
+			.overlay(
+				RoundedRectangle(cornerRadius: 4)
+					.stroke(Color.black.opacity(0.2), lineWidth: 1)
+			)
+	}
+	
+	private var isdCodeView: some View {
+		ZStack {
+			VStack(alignment: .leading, spacing: 0) {
+				isdCodebutton
+				if self.showList {
+					listView
+				}
+			}
+		}
+	}
+	
 	private var isdCodebutton: some View {
 		Button(action: {
-			
+			self.showList.toggle()
 		}, label: {
 			HStack(spacing: 5) {
-				Text("+91")
+				Text(self.isdCode)
 					.foregroundColor(Color.black)
 					.font(Font.montserratMedium(14))
 					.padding(.vertical, 12)
@@ -119,18 +152,37 @@ extension OnboardingView {
 		.buttonStyle(PlainButtonStyle())
 	}
 	
-	private var phoneNoField: some View {
-		TextField("Phone", text: self.$phoneNo)
-			.font(Font.montserratMedium(14))
-			.keyboardType(.numberPad)
-			.autocapitalization(.none)
-			.disableAutocorrection(true)
-			.padding(.vertical, 12)
-			.padding(.horizontal, 10)
+	private var listView: some View {
+		List {
+			ForEach(isdCodes) { item in
+				listIem(item: item)
+			}
+		}
+		.frame(width: 80, height: 150)
+		.overlay(
+			Rectangle()
+				.stroke(Color.black.opacity(0.2), lineWidth: 1)
+		)
+	}
+	
+	private func listIem(item: String) -> some View {
+		HStack {
+			Button(action: {
+				self.isdCode = item
+				self.showList.toggle()
+			}, label: {
+				Text(item)
+					.foregroundColor(Color.black)
+					.font(Font.montserratMedium(14))
+					.frame(maxWidth: .infinity, maxHeight: .infinity)
+			})
+			.buttonStyle(PlainButtonStyle())
 			.overlay(
-				RoundedRectangle(cornerRadius: 4)
+				Rectangle()
 					.stroke(Color.black.opacity(0.2), lineWidth: 1)
 			)
+		}
+		.listRowInsets(EdgeInsets())
 	}
 	
 }
