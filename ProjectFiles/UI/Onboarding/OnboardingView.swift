@@ -12,6 +12,8 @@ struct OnboardingView: View {
 	@State var isdCode: String = "XX"
 	@State var phoneNo: String = ""
 	@State var showList: Bool = false
+	@State var isClearButtonEnabled: Bool = false
+	
 	private var isdCodes: [String] = String.codeList
 	
 	var body: some View {
@@ -99,7 +101,7 @@ extension OnboardingView {
 			VStack(alignment: .leading, spacing: 0) {
 				HStack(alignment: .top, spacing: 10) {
 					isdCodebutton
-					phoneNoField
+					phoneNoView
 				}
 				.padding(.horizontal, 20)
 				if self.showList {
@@ -110,6 +112,17 @@ extension OnboardingView {
 		}
 	}
 	
+	private var phoneNoView: some View {
+		HStack(spacing: 0) {
+			phoneNoField
+			clearbutton
+		}
+		.overlay(
+			RoundedRectangle(cornerRadius: 4)
+				.stroke(Color.black.opacity(0.2), lineWidth: 1)
+		)
+	}
+	
 	private var phoneNoField: some View {
 		TextField("Phone", text: self.$phoneNo)
 			.font(Font.montserratMedium(14))
@@ -118,10 +131,23 @@ extension OnboardingView {
 			.disableAutocorrection(true)
 			.padding(.vertical, 12)
 			.padding(.horizontal, 10)
-			.overlay(
-				RoundedRectangle(cornerRadius: 4)
-					.stroke(Color.black.opacity(0.2), lineWidth: 1)
-			)
+			.onChange(of: self.phoneNo, perform: { text in
+				self.isClearButtonEnabled = !text.isEmpty
+			})
+	}
+	
+	private var clearbutton: some View {
+		Button(action: {
+			self.phoneNo = ""
+		}, label: {
+			Text("Clear")
+				.foregroundColor(self.isClearButtonEnabled ? .black : .gray)
+				.font(Font.montserratMedium(12))
+				.padding(.vertical, 12)
+				.padding(.horizontal, 15)
+		})
+		.buttonStyle(PlainButtonStyle())
+		.disabled(!self.isClearButtonEnabled)
 	}
 	
 	private var isdCodebutton: some View {
