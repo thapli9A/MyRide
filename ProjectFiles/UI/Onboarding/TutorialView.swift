@@ -57,7 +57,7 @@ extension TutorialView {
 	
 	private var skipButton: some View {
 		Button(action: {
-			
+			sceneDelegate.showOnboarding()
 		}, label: {
 			let color: Color = self.currentPage == 3 ? .white : .black
 			Text("Skip")

@@ -41,7 +41,10 @@ extension OTPView {
 	private var bottomView: some View {
 		VStack(spacing: 0) {
 			headingView
+			phoneNoView
+			inputTitleView
 			inputView
+			resendView
 			Spacer()
 			otpButton
 			Spacer()
@@ -93,10 +96,81 @@ extension OTPView {
 
 extension OTPView {
 	
-	private var inputView: some View {
-		VStack {
-			
+	private var phoneNoView: some View {
+		HStack(spacing: 0) {
+			Text("+91-9090XXXXXX")
+				.font(Font.montserratMedium(16))
+				.foregroundColor(.black)
+			Spacer()
+			changeNoButton
 		}
+		.padding(.horizontal, 20)
+	}
+	
+	private var changeNoButton: some View {
+		Button(action: {
+			
+		}, label: {
+			Text("Change Number")
+				.foregroundColor(Color.red)
+				.font(Font.montserratMedium(12))
+				.padding(.vertical, 5)
+		})
+		.buttonStyle(PlainButtonStyle())
+	}
+	
+	private var inputTitleView: some View {
+		HStack {
+			Text("Enter OTP")
+				.font(Font.montserratMedium(12))
+				.foregroundColor(.gray)
+			Spacer()
+			Text("00:14")
+				.font(Font.montserratMedium(12))
+				.foregroundColor(.gray)
+		}
+		.padding(.top, 20)
+		.padding(.bottom, 10)
+		.padding(.horizontal, 20)
+	}
+	
+	private var inputView: some View {
+		HStack {
+			ForEach(0..<6) { _ in
+				TextField("", text: self.$otp)
+					.foregroundColor(Color.primaryColor)
+					.font(Font.montserratMedium(18))
+					.multilineTextAlignment(.center)
+					.padding(.vertical, 15)
+					.overlay(
+						Rectangle()
+							.stroke(Color.black.opacity(0.2), lineWidth: 1)
+					)
+			}
+		}
+		.padding(.bottom, 20)
+		.padding(.horizontal, 20)
+	}
+	
+	private var resendView: some View {
+		HStack(alignment: .center, spacing: 5) {
+			Text("Didn't receive your code?")
+				.foregroundColor(.gray)
+				.font(Font.montserratMedium(14))
+			resendButton
+		}
+	}
+	
+	private var resendButton: some View {
+		Button(action: {
+			
+		}, label: {
+			Text("Resend Now")
+				.foregroundColor(Color.primaryColor)
+				.font(Font.montserratMedium(14))
+				.padding(.vertical, 5)
+		})
+		.buttonStyle(PlainButtonStyle())
 	}
 	
 }
