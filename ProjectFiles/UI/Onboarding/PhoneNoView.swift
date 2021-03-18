@@ -12,12 +12,18 @@ struct PhoneNoView: View {
 	@State var isdCode: String = "XX"
 	@State var phoneNo: String = ""
 	@State var showList: Bool = false
+	@State var isPushed: Bool = false
 	@State var isClearButtonEnabled: Bool = false
 	
 	private var isdCodes: [String] = String.codeList
 	
 	var body: some View {
-		parentView
+		NavigationView {
+			parentView
+				.navigationBarHidden(true)
+		}
+		// to avoid extra padding coming via navigation view
+		.navigationViewStyle(StackNavigationViewStyle())
 	}
 	
 }
@@ -28,6 +34,10 @@ extension PhoneNoView {
 		VStack(spacing: 0) {
 			logo
 			bottomView
+			NavigationLink(
+				destination: OTPView(),
+				isActive: self.$isPushed
+			) {}
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(Color.primaryColor.ignoresSafeArea())
@@ -78,7 +88,7 @@ extension PhoneNoView {
 	
 	private var otpButton: some View {
 		Button(action: {
-			
+			self.isPushed.toggle()
 		}, label: {
 			Text("Send OTP")
 				.foregroundColor(Color.white)
@@ -174,7 +184,7 @@ extension PhoneNoView {
 	private var listView: some View {
 		List {
 			ForEach(isdCodes) { item in
-				listIem(item: item)
+				listItem(item: item)
 			}
 		}
 		.frame(width: 70, height: 132)
@@ -182,9 +192,11 @@ extension PhoneNoView {
 			Rectangle()
 				.stroke(Color.black.opacity(0.2), lineWidth: 1)
 		)
+		// to avoid extra padding coming via navigation view but it takes back separator
+//		.listStyle(PlainListStyle())
 	}
 	
-	private func listIem(item: String) -> some View {
+	private func listItem(item: String) -> some View {
 		VStack(spacing: 0) {
 			Button(action: {
 				self.isdCode = item
