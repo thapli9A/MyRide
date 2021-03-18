@@ -16,11 +16,6 @@ struct OnboardingView: View {
 	
 	var body: some View {
 		parentView
-		//			.onAppear {
-		//				UITableView.appearance().separatorInset = UIEdgeInsets(
-		//					top: 0, left: 0, bottom: 0, right: 0
-		//				)
-		//			}
 	}
 	
 }
@@ -40,6 +35,7 @@ extension OnboardingView {
 		Image("onboarding_logo")
 			.padding(.vertical, 50)
 	}
+	
 }
 
 extension OnboardingView {
@@ -99,11 +95,19 @@ extension OnboardingView {
 extension OnboardingView {
 	
 	private var inputView: some View {
-		HStack(alignment: .top, spacing: 10) {
-			isdCodeView
-			phoneNoField
+		ZStack {
+			VStack(alignment: .leading, spacing: 0) {
+				HStack(alignment: .top, spacing: 10) {
+					isdCodebutton
+					phoneNoField
+				}
+				.padding(.horizontal, 20)
+				if self.showList {
+					listView
+						.padding(.leading, 20)
+				}
+			}
 		}
-		.padding(.horizontal, 20)
 	}
 	
 	private var phoneNoField: some View {
@@ -118,17 +122,6 @@ extension OnboardingView {
 				RoundedRectangle(cornerRadius: 4)
 					.stroke(Color.black.opacity(0.2), lineWidth: 1)
 			)
-	}
-	
-	private var isdCodeView: some View {
-		ZStack {
-			VStack(alignment: .leading, spacing: 0) {
-				isdCodebutton
-				if self.showList {
-					listView
-				}
-			}
-		}
 	}
 	
 	private var isdCodebutton: some View {
@@ -158,7 +151,7 @@ extension OnboardingView {
 				listIem(item: item)
 			}
 		}
-		.frame(width: 80, height: 150)
+		.frame(width: 70, height: 132)
 		.overlay(
 			Rectangle()
 				.stroke(Color.black.opacity(0.2), lineWidth: 1)
@@ -173,7 +166,7 @@ extension OnboardingView {
 			}, label: {
 				Text(item)
 					.foregroundColor(Color.black)
-					.font(Font.montserratMedium(14))
+					.font(Font.montserratMedium(12))
 					.frame(maxWidth: .infinity, maxHeight: .infinity)
 			})
 			.buttonStyle(PlainButtonStyle())
