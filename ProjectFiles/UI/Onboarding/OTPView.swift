@@ -10,6 +10,7 @@ import SwiftUI
 struct OTPView: View {
 	
 	@State var otp: String = ""
+	@State var isPushed: Bool = false
 		
 	var body: some View {
 		parentView
@@ -24,6 +25,10 @@ extension OTPView {
 		VStack(spacing: 0) {
 			logo
 			bottomView
+			NavigationLink(
+				destination: ProfileView(),
+				isActive: self.$isPushed
+			) {}
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(Color.primaryColor.ignoresSafeArea())
@@ -79,7 +84,7 @@ extension OTPView {
 	
 	private var otpButton: some View {
 		Button(action: {
-			
+			self.isPushed.toggle()
 		}, label: {
 			Text("Verify")
 				.foregroundColor(Color.white)
